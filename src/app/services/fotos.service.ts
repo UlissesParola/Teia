@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FotosService {
-  private apiUrl = 'https://jsonplaceholder.typicode.com/photos';
+  protected apiUrl = 'https://jsonplaceholder.typicode.com/photos';
 
 
   constructor(private http: HttpClient) { }
