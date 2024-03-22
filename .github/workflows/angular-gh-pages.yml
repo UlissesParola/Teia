@@ -24,7 +24,7 @@ jobs:
         run: npm install
 
       - name: Build
-        run: ng build --prod --base-href "/teia_c071615/"
+        run: ng build --configuration production --base-href "/teia_c071615/"
 
       - name: Deploy to GitHub Pages
         run: npx angular-cli-ghpages --dir=dist/teia_c071615
