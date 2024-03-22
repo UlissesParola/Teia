@@ -16,3 +16,12 @@ mat-grid-tile {
   .clicavel{
     cursor: pointer;
 }
+
+.foto-container {
+    margin: 0;
+    padding: 0;
+  }
+
+mat-grid-list.custom-grid {
+    padding-bottom: 50px !important;
+  }
