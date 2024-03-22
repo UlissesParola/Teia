@@ -33,4 +33,18 @@ describe('FotosService', () => {
     });
 
   });
+
+  it('deve manejar erros na busca de fotos', () => {
+    const errorMsg = { message: 'erro simulado' };
+  
+    service.getFotos().subscribe({
+      next: data => fail('deve ter falhado com o erro simulado'),
+      error: error => expect(error.message).toContain(errorMsg.message),
+      complete: () => console.log('Complete') 
+    });
+  
+    const req = httpMock.expectOne(request => request.method === 'GET');
+    req.flush(errorMsg, { status: 500, statusText: 'Internal Server Error' });
+  });
+
 });
