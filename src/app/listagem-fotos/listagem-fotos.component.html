@@ -1,5 +1,11 @@
+<div class="campoDePesquisa">
+    <mat-form-field appearance="fill" >
+        <mat-label>Pesquisar</mat-label>
+        <input matInput [(ngModel)]="termoDeBusca" (keyup)="filtrarFotos()">
+      </mat-form-field>
+</div>    
 <mat-grid-list [cols]=cols rowHeight="1:1" [gutterSize]="'30px'" class="custom-grid">
-    <mat-grid-tile *ngFor="let foto of fotos" (click)="abrirModalFoto(foto)" >
+    <mat-grid-tile *ngFor="let foto of fotosFiltradas" (click)="abrirModalFoto(foto)" >
       <img src="{{foto.thumbnailUrl}}" alt="{{foto.title}}" style="width: 100%; height: auto;" class="clicavel" loading="lazy">
     </mat-grid-tile>
   </mat-grid-list>

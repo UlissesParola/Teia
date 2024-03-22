@@ -25,3 +25,8 @@ mat-grid-tile {
 mat-grid-list.custom-grid {
     padding-bottom: 50px !important;
   }
+
+  .campoDePesquisa {
+    margin: 50px 10px 10px 50px;
+    width: 20%; 
+}

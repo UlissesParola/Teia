@@ -12,7 +12,9 @@ import { FotoModalComponent } from '../foto-modal/foto-modal.component';
 })
 export class ListagemFotosComponent implements OnInit{
   fotos: Foto[] = [];
+  fotosFiltradas: Foto[] = [];
   cols: number = 0;
+  termoDeBusca: string = '';
 
   constructor(
     private fotoService : FotosService, 
@@ -34,6 +36,7 @@ export class ListagemFotosComponent implements OnInit{
     this.fotoService.getFotos().subscribe({
       next: (fotos: Foto[]) => {
         this.fotos = fotos;
+        this.fotosFiltradas = fotos;
       },
       error: (error) => {
         console.error(error);
@@ -58,5 +61,16 @@ export class ListagemFotosComponent implements OnInit{
       width: '40%',
       data: {url: foto.url, title: foto.title, album: `Álbum ${foto.albumId}`}
     })
+  }
+
+  filtrarFotos(){
+    if (!this.termoDeBusca) {
+      this.fotosFiltradas = this.fotos;
+    } else {
+      this.fotosFiltradas = this.fotos.filter(foto =>
+        foto.title.toLowerCase().includes(this.termoDeBusca.toLowerCase()) ||
+        foto.albumId.toString().includes(this.termoDeBusca)
+      );
+    }
   }
 }
