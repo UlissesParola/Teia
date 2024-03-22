@@ -1,27 +1,27 @@
 # TeiaC071615
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.12.
+Projeto desenvolvido para o desafio de frontend da TEIA/Caixa
 
-## Development server
+Foi utilizado Angular 16, por ser LTS e Material para o design.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Projeto publicado no netlify: https://teia071615.netlify.app/
 
-## Code scaffolding
+Considerações sobre o desenvolvimento:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Foi criando um módulo separado para importação e exportação dos componentes Material, para melhorar a organização, além de evitar a importação separada em vários componentes.
 
-## Build
+- A lógica de acesso à API foi separada em um service.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Foi sugerida a implanatação de paginação, mas entendi que a disposição das fotos em um grid, com scroll vertical ficaria mais adequado a proposta do que a utilização de um datatable. Dito isso, tentei implementar um carregamento por paginação, calculando a quantidade de tiles por tela, dependendo da dimensão e recalculando ativamente. Infelizmente a API disponibilizada não permitia a solicitação de mais de itens por página, embora tivesse uma sugestão na documentação de que esse seria só o default. Com essa limitação, decidi fazer o carregamento completo do json na inicialização e implemenar um lazy loading nas imagens.
 
-## Running unit tests
+- Como o json fornecia um thumnbail e um foto, adicionei os thumbnails à tela inicial, sem outros detalhes, com possibilidade de clicar na imagem e abrir a foto original, com as suas informações, em um modal.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Implementação de filtro de pesquisa por caractere para títulos e álbuns.
 
-## Running end-to-end tests
+- Clicar no título da página recarrega as imagens.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Inicei a implementação de testes automatizados, mas faltou tempo. Logo, só o serviço de acesso à API está com testes.
 
-## Further help
+- Criei uma interface para a Foto, visando maior consistência nos dados.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Utilizado CI/Cd para publicação no netlify.
