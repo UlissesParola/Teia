@@ -35,16 +35,14 @@ describe('FotosService', () => {
   });
 
   it('deve manejar erros na busca de fotos', () => {
-    const errorMsg = { message: 'erro simulado' };
-  
     service.getFotos().subscribe({
-      next: data => fail('deve ter falhado com o erro simulado'),
-      error: error => expect(error.message).toContain(errorMsg.message),
-      complete: () => console.log('Complete') 
+      next: data => fail('Esperava-se um erro, não fotos.'),
+      error: error => expect(error.message).toContain('Não foi possível concluir a solicitação neste momento')
     });
   
     const req = httpMock.expectOne(request => request.method === 'GET');
-    req.flush(errorMsg, { status: 500, statusText: 'Internal Server Error' });
+
+    req.flush('Não foi possível consluir a solicitação nesse momento. Tente mais tarde.', { status: 500, statusText: 'Internal Server Error' });
   });
 
 });
