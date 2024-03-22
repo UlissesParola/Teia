@@ -26,7 +26,6 @@ export class FotosService {
         `O servidor retornou um erro: código: ${error.status}, mensagem: ${error.error}`);
     }
 
-    return throwError(() => new Error('Não foi possível consluir a solicitação nesse momento. Tente mais tarde.'));
+    return throwError(() => new Error('Não foi possível concluir a solicitação nesse momento. Tente mais tarde.'));
   }
-
 }
