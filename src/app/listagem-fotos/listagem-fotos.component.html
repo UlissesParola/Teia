@@ -1,5 +1,5 @@
 <mat-grid-list [cols]=cols rowHeight="1:1" [gutterSize]="'30px'">
-    <mat-grid-tile *ngFor="let foto of fotos">
-      <img src="{{foto.thumbnailUrl}}" alt="{{foto.title}}" style="width: 100%; height: auto;">
+    <mat-grid-tile *ngFor="let foto of fotos" (click)="abrirModalFoto(foto)">
+      <img src="{{foto.thumbnailUrl}}" alt="{{foto.title}}" style="width: 100%; height: auto;" class="clicavel">
     </mat-grid-tile>
   </mat-grid-list>

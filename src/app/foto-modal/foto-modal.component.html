@@ -1,0 +1,10 @@
+<div class="modal-header">
+    <button mat-icon-button mat-dialog-close aria-label="Fechar" class="btn-fechar">
+      <mat-icon>close</mat-icon>
+    </button>
+</div>
+<mat-dialog-content>
+    <h2 cdkFocusInitial mat-dialog-title>{{ data.title }}</h2>
+    <img [src]="data.url" alt="{{ data.title }}" style="width: 100%;">
+    <p>Álbum: {{ data.album }}</p>
+</mat-dialog-content>

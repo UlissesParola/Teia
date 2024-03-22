@@ -12,3 +12,7 @@ mat-grid-tile {
   mat-grid-list{
     margin: 50px;
   }
+
+  .clicavel{
+    cursor: pointer;
+}

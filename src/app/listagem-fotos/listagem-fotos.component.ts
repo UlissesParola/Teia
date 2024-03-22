@@ -2,7 +2,8 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { FotosService } from '../services/fotos.service';
 import { Foto } from '../models/foto.model';
 import { RecarregarFotosService } from '../services/recarregar-fotos.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { FotoModalComponent } from '../foto-modal/foto-modal.component';
 
 @Component({
   selector: 'app-listagem-fotos',
@@ -16,7 +17,7 @@ export class ListagemFotosComponent implements OnInit{
   constructor(
     private fotoService : FotosService, 
     private recarregarFotosServices: RecarregarFotosService,
-    private snackBar: MatSnackBar) {
+    private dialog: MatDialog) {
       this.calcularColunas(window.innerWidth);
   }
 
@@ -29,12 +30,10 @@ export class ListagemFotosComponent implements OnInit{
   }
 
   carregarFotos(): void {
+    this.fotos = [];
     this.fotoService.getFotos().subscribe({
       next: (fotos: Foto[]) => {
         this.fotos = fotos;
-        this.snackBar.open('Fotos carregadas com sucesso!', 'Fechar', {
-          duration: 3000,
-        });
       },
       error: (error) => {
         console.error(error);
@@ -52,5 +51,12 @@ export class ListagemFotosComponent implements OnInit{
   @HostListener('window:resize')
   onResize() {
     this.calcularColunas(window.innerWidth);
+  }
+
+  abrirModalFoto(foto: Foto) {
+    this.dialog.open(FotoModalComponent, {
+      width: '40%',
+      data: {url: foto.url, title: foto.title, album: `Álbum ${foto.albumId}`}
+    })
   }
 }

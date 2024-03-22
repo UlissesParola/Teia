@@ -1,0 +1,13 @@
+.modal-header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute; 
+    top: 0;
+    right: 0;
+    padding: 5px;
+  }
+.btn-fechar{
+    z-index: 2;
+}
+  

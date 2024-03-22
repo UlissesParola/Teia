@@ -7,6 +7,9 @@ import { MatMenuModule } from "@angular/material/menu";
 import { MatListModule } from "@angular/material/list";
 import { MatGridListModule } from "@angular/material/grid-list"
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from "@angular/material/dialog";
+import { MatButtonModule } from '@angular/material/button';
+
 
 //export { MatSidenavModule } from "@angular/material/sidenav";
 
@@ -18,7 +21,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
         MatMenuModule,
         MatListModule,
         MatGridListModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatDialogModule,
+        MatButtonModule
     ],
     exports: [
         MatToolbarModule,
@@ -27,7 +32,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
         MatMenuModule,
         MatListModule,
         MatGridListModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatDialogModule,
+        MatButtonModule
     ]
 })
 
