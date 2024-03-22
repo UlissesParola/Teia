@@ -1,20 +1,10 @@
-.btn-menu{
-    color:white;
-    background-color: blue;
-    border: none;
-    font-size: 30px;
-}
-
-.sidenav-container{
-    height: 100vh;
-    width: 200px;
-
-}
-
-.conteudo-container{
-    height: (100vh - 64px);
-    width: 100vw;
-}
 .header{
-    background-color: blue;
+    background-color: #003876;
+    color:#F5F5F5;
 }
+#icone-barra{
+    padding-right: 10px;
+}
+span {
+    cursor: pointer;
+  }

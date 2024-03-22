@@ -5,8 +5,10 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatListModule } from "@angular/material/list";
+import { MatGridListModule } from "@angular/material/grid-list"
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-export { MatSidenavModule } from "@angular/material/sidenav";
+//export { MatSidenavModule } from "@angular/material/sidenav";
 
 @NgModule({
     imports: [
@@ -14,14 +16,18 @@ export { MatSidenavModule } from "@angular/material/sidenav";
         MatIconModule,
         MatSidenavModule,
         MatMenuModule,
-        MatListModule
+        MatListModule,
+        MatGridListModule,
+        MatSnackBarModule
     ],
     exports: [
         MatToolbarModule,
         MatIconModule,
         MatSidenavModule,
         MatMenuModule,
-        MatListModule
+        MatListModule,
+        MatGridListModule,
+        MatSnackBarModule
     ]
 })
 

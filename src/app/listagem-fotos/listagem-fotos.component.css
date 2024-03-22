@@ -1,0 +1,14 @@
+mat-grid-tile {
+    border-radius: 4px; /* Opcional, para adicionar bordas arredondadas */
+    overflow: hidden; /* Para manter o conteúdo dentro das bordas arredondadas */
+  }
+  
+  img {
+    width: 100%; /* Garante que a imagem preencha o tile */
+    height: 100%; /* Garante que a imagem preencha o tile */
+    object-fit: cover; /* Garante que a imagem cubra o tile sem perder as proporções */
+  }
+
+  mat-grid-list{
+    margin: 50px;
+  }

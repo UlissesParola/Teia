@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MatSidenavModule } from "./material/material.module"
+import { RecarregarFotosService } from './services/recarregar-fotos.service';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +10,12 @@ export class AppComponent {
   title = 'teia_c071615';
   opened: boolean = false;
 
-  constructor(){
+  constructor(private recarregarFotosService: RecarregarFotosService){
   }
 
-  toogleMenu() : void{
-    this.opened = !this.opened;
+  recarregarFotos(){
+    this.recarregarFotosService.recarregar();
+    console.log("recarregado");
   }
 }
+

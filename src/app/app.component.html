@@ -1,14 +1,6 @@
 <mat-toolbar class="header">
-  <button mat-icon-button class="btn-menu" (click)="sidenav.toggle()">
-    <mat-icon class="btn-menu">menu</mat-icon>
-  </button>
+  <mat-icon id="icone-barra">photo_camera</mat-icon>
+  <span (click)="recarregarFotos()">Minha Galeria de Fotos</span>
 </mat-toolbar>
-<mat-drawer-container class="conteudo-container">
-  <mat-drawer class="sidenav-container" #sidenav mode="side" [(opened)]="opened">
-   <ul>
-    <li>Item 1</li>
-   </ul>
-  </mat-drawer>
 
-  <mat-drawer-content>Main content</mat-drawer-content>
-</mat-drawer-container>
+<app-listagem-fotos></app-listagem-fotos>

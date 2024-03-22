@@ -5,10 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ListagemFotosComponent } from './listagem-fotos/listagem-fotos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ListagemFotosComponent,
   ],
   imports: [
     BrowserModule,
